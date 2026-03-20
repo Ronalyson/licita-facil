@@ -78,7 +78,7 @@ class MainWindow(ctk.CTk):
 
         subtitle = ctk.CTkLabel(
             container,
-            text="Evolucao dos scripts VBA para uma interface simples e rapida.",
+            text="Evolução dos scripts VBA para uma interface simples e rapida.",
             font=ctk.CTkFont(size=14),
             text_color="#5f6b7a",
         )
@@ -113,7 +113,7 @@ class MainWindow(ctk.CTk):
         self._build_entry(fields, "Coluna", self.column_var, 0)
         self._build_entry(fields, "Porcentagem", self.percentage_var, 1)
 
-        action_label = ctk.CTkLabel(fields, text="Acao", anchor="w")
+        action_label = ctk.CTkLabel(fields, text="Ação", anchor="w")
         action_label.grid(row=0, column=2, padx=8, pady=(6, 2), sticky="w")
         action_segmented = ctk.CTkSegmentedButton(
             fields,
@@ -138,7 +138,7 @@ class MainWindow(ctk.CTk):
 
         labels_help = ctk.CTkLabel(
             form,
-            text="Escolha coluna e porcentagem. Arredondamento so vale ao diminuir.",
+            text="Escolha coluna e porcentagem. Arredondamento só vale ao diminuir.",
             text_color="#6b7280",
         )
         labels_help.grid(row=5, column=0, columnspan=2, padx=14, pady=(0, 10), sticky="w")
@@ -206,7 +206,7 @@ class MainWindow(ctk.CTk):
         try:
             options = self._collect_options()
         except ValueError as exc:
-            messagebox.showerror("Validacao", str(exc))
+            messagebox.showerror("Validação", str(exc))
             return
 
         self.process_button.configure(state="disabled", text="Processando...")
@@ -224,7 +224,7 @@ class MainWindow(ctk.CTk):
         if not output_path:
             raise ValueError("Informe onde salvar o novo arquivo.")
         if Path(input_path).resolve() == Path(output_path).resolve():
-            raise ValueError("Salve em um novo arquivo para nao sobrescrever o original.")
+            raise ValueError("Salve em um novo arquivo para não sobrescrever o original.")
 
         action = ACTION_LABEL_TO_VALUE[self.action_var.get()]
         rounding = ROUNDING_LABEL_TO_VALUE[self.rounding_var.get()]
